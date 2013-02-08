@@ -1,0 +1,16 @@
+<html>
+   <body>
+      <h1>${projecte}</h1>
+      <ul>
+      % for prod in diccionari:
+         <li>ID Producte: ${prod}</li>
+           <ul>Nom: ${diccionari[prod]['Name']}</ul>
+           <ul>Preu: ${diccionari[prod]['Price']}</ul>
+           <ul>Unitats Disponibles: ${diccionari[prod]['Stock']}</ul>
+         
+      % endfor
+      </ul><br>
+      
+      El preu d'una casa és: ${diccionari['03']['Price']}
+   </body>
+</html>
