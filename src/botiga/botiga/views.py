@@ -3,6 +3,8 @@
 import os
 from pyramid.view import view_config
 from botigaObjects import dadesProductes
+from pyramid.httpexceptions import HTTPFound
+
 
 
 here = os.path.dirname(os.path.abspath(__file__))  # --- direccio on es troba el fitxers tasks.py
@@ -30,13 +32,29 @@ def inici_view(request):
 @view_config(route_name='comandes', renderer='comandes.mako')
 def comandes_view(request):
     proj = "Botigueta Pro"
-    return {"projecte":proj}
+    #dades=dadesProductes(here)
+    dades=dadesProductes()
+    commandes=dades.getCommandes()
+    return { "projecte":proj, "diccionari":commandes }
     
 
 @view_config(route_name='realitzar_comanda', renderer='realitzar_comanda.mako')
 def realitza_comanda_view(request):
+    lista=[]
     proj = "Botigueta Pro"
     #dades=dadesProductes(here)
     dades=dadesProductes()
     productes=dades.getProductes()
-    return { "projecte":proj, "diccionari":productes }
+    if request.method == 'POST':
+        for prod in productes:
+            if request.POST.get(prod)!='':
+                #print request.POST.get(prod)
+                lista.append(productes[prod]['Name'])
+                lista.append(request.POST.get(prod))
+                dades.escriu_dades_arxiu(lista)
+                    #request.session.flash('New task was successfully added!')
+            lista=[]
+        return HTTPFound(location=request.route_url('comandes'))
+            #else:
+                #request.session.flash('Please enter a name for the task!')
+    return {"projecte":proj, "diccionari":productes}

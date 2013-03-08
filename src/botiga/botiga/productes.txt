@@ -1,5 +1,5 @@
 01    Pastanaga Celestina    35    3
 02    Tablets de xoco    10    500
-03    Casas de pinguins     3    75000
+03    Casas de pinguins     3    95000
 04    Cola Coca    58    56,75
 05    Marocacuca    40    56,75

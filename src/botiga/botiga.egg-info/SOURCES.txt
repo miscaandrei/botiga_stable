@@ -5,8 +5,7 @@ setup.cfg
 setup.py
 botiga/__init__.py
 botiga/botigaObjects.py
-botiga/comandes.txt
-botiga/id_comandes.txt
+botiga/commandes.txt
 botiga/productes.txt
 botiga/tests.py
 botiga/views.py
