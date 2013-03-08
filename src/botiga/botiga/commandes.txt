@@ -1,8 +1,13 @@
-01    Pastanaga    4
-02    Tablets de xoco    45
-05    Pastanaga    4
-02    Tablets de xoco    45
-07    Pastanaga    4
-03    Tablets de xoco    45
-7    Casas de pinguins    45
-7    Cola Coca    345
+1    Pastanaga    4
+5    Pastanaga    4
+2    Tablets de xoco    45
+7    Pastanaga    4
+8    Pastanaga    4
+9    Tablets de xoco    234
+9    Casas de pinguins    45
+9    Cola Coca    64
+10    Tablets de xoco    324
+10    Casas de pinguins    125
+10    Pastanaga Celestina    54
+10    Cola Coca    12354
+10    Marocacuca    245

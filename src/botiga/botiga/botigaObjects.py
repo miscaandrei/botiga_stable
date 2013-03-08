@@ -91,7 +91,7 @@ class dadesProductes(object):
         f.close()
         #Final Codi copiat
         llista_final.sort()
-        return  llista_final.pop()
+        return  int(llista_final.pop()+1)
 
 
 d=dadesProductes()
