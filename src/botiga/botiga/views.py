@@ -10,10 +10,12 @@ from pyramid.httpexceptions import HTTPFound
 here = os.path.dirname(os.path.abspath(__file__))  # --- direccio on es troba el fitxers tasks.py
 
 
-@view_config(route_name='home', renderer='templates/mytemplate.pt')
+@view_config(route_name='home', renderer='index.mako')
 def my_view(request):
-    return {'project':'botiga'}
-
+    proj = "Botigueta Pro"
+    menu = { 'Productes Disponibles' :'/botiga' , 'Les seves comandes':'/comandes' , 'Realitza la seva comanda':'/realitzar_comanda' }
+    return {"projecte":proj, "menu":menu }
+    
 @view_config(route_name='productes', renderer='productes.mako')
 def productes_view(request):
     proj = "Botigueta Pro"
