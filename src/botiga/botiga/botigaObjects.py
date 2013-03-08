@@ -37,9 +37,9 @@ class dadesProductes(object):
         return self.diccionari_productes
 
 
-    def escriu_dades_arxiu(self,lista_valors):
+    def escriu_dades_arxiu(self,lista_valors,numero_commanda):
         f=open(os.path.join(here, 'commandes.txt'),'a')
-        f.write('01')
+        f.write(numero_commanda)
         f.write('    ')
         f.write(lista_valors[0])
         f.write('    ')
@@ -62,15 +62,41 @@ class dadesProductes(object):
         for x in range(0, longitud_llista):
             #print llista_inicial[x]
             llista_temporal=llista_inicial[x].split('    ')
-            diccionari.update({x:{ 'Nom':llista_temporal[1],'Quantitat':llista_temporal[2]}})
+            diccionari.update({x:{'ID_Commanda':llista_temporal[0], 'Nom':llista_temporal[1],'Quantitat':llista_temporal[2]}})
             llista_temporal=[]
         f.close()
         #Final Codi copiat
         return diccionari
+    
+    
+    def getNumeroCommanda(self):
+        #Codi funcional copiat des de la view
+        llista_inicial=[]
+        longitud_llista=0
+        llista_temporal=[]
+        llista_final=[]
+        diccionari={}
+        proj = "Botigueta Pro"
+        f=open(os.path.join(here, 'commandes.txt'),'r')
+        #f=open('productes.txt','r')
+        for linia in f:
+            llista_inicial.append(linia.strip())
+        f.close()
+        longitud_llista=len(llista_inicial)
+        for x in range(0, longitud_llista):
+            #print llista_inicial[x]
+            llista_temporal=llista_inicial[x].split('    ')
+            llista_final.append(int(llista_temporal[0]))
+            llista_temporal=[]
+        f.close()
+        #Final Codi copiat
+        llista_final.sort()
+        return  llista_final.pop()
 
 
-
-
+d=dadesProductes()
+numero=d.getNumeroCommanda()
+print numero
 '''
 # TEST
 d=dadesProductes()

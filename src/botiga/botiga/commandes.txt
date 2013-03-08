@@ -1,2 +1,8 @@
 01    Pastanaga    4
-01    Tablets de xoco    45
+02    Tablets de xoco    45
+05    Pastanaga    4
+02    Tablets de xoco    45
+07    Pastanaga    4
+03    Tablets de xoco    45
+7    Casas de pinguins    45
+7    Cola Coca    345

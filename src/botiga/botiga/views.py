@@ -47,13 +47,14 @@ def realitza_comanda_view(request):
     #dades=dadesProductes(here)
     dades=dadesProductes()
     productes=dades.getProductes()
+    numero_pedido=str(dades.getNumeroCommanda())
     if request.method == 'POST':
         for prod in productes:
             if request.POST.get(prod)!='':
                 #print request.POST.get(prod)
                 lista.append(productes[prod]['Name'])
                 lista.append(request.POST.get(prod))
-                dades.escriu_dades_arxiu(lista)
+                dades.escriu_dades_arxiu(lista,numero_pedido)
                     #request.session.flash('New task was successfully added!')
             lista=[]
         return HTTPFound(location=request.route_url('comandes'))

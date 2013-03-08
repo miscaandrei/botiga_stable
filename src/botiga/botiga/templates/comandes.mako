@@ -10,7 +10,7 @@
             </tr>
             <tr>
                 % for prod in diccionari:
-                    <td>${prod}</td>
+                    <td>${diccionari[prod]['ID_Commanda']}</td>
                     <td>${diccionari[prod]['Nom']}</td>   
                     <td>${diccionari[prod]['Quantitat']}</td>
 
