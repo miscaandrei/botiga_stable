@@ -1,6 +1,6 @@
 <html>
    <body>
-      <h1>Hola</h1>
+      <a href='/index'><h1>${projecte}</h1></a>
       <ul>
           <form action="${request.route_url('realitzar_comanda')}" method="post">
           <table border='1' >

@@ -1,6 +1,6 @@
 <html>
    <body>
-      <h1>${projecte}</h1>
+      <a href='/index'><h1>${projecte}</h1></a>
       <ul>
         <table border='1' >
             <tr>
