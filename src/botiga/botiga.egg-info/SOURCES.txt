@@ -6,7 +6,10 @@ setup.py
 botiga/__init__.py
 botiga/botigaObjects.py
 botiga/commandes.txt
+botiga/id_commandes.txt
+botiga/models.py
 botiga/productes.txt
+botiga/security.py
 botiga/tests.py
 botiga/views.py
 botiga.egg-info/PKG-INFO
@@ -27,7 +30,7 @@ botiga/static/pyramid.png
 botiga/static/transparent.gif
 botiga/templates/comandes.mako
 botiga/templates/index.mako
-botiga/templates/mytemplate.pt
+botiga/templates/login.pt
 botiga/templates/productes.mako
 botiga/templates/realitzar_comanda.mako
 botiga/templates/style.css

@@ -24,5 +24,6 @@
         <input type="submit" name="add" value="Afegir" class="button">
           </form>
       </ul><br>
+      <span tal:condition="logged_in"><a href="${request.application_url}/logout">Desconectat</a></span>
    </body>
 </html>
